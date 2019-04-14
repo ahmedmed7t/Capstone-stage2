@@ -3,8 +3,12 @@ package omdvet.com;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,6 +25,12 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -50,6 +60,9 @@ public class OrderActivity extends AppCompatActivity {
     int is_cash = -1 ;
     String type = "";
     Intent mIntent ;
+
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
 
     private TextView name,phone,address,cost,finalCost;
@@ -183,6 +196,12 @@ public class OrderActivity extends AppCompatActivity {
 
                 getData();
 
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference().child("Orders");
+
+                databaseReference.push().setValue(clientOrder);
+
+
             }
 
         });
@@ -226,10 +245,6 @@ public class OrderActivity extends AppCompatActivity {
 
                             @Override
                             public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-
-//                    int position = rv.getChildAdapterPosition(child);
-//                    View child = rv.getChildAt(position);
-
 
                             }
 
@@ -361,5 +376,25 @@ public class OrderActivity extends AppCompatActivity {
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, NewAppWidget.class));
         NewAppWidget.update_widget(this,appWidgetManager,appWidgetIds,text,text1);
 
+    }
+
+
+    public void showDialog(){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
+        builder1.setMessage("Order added to your billes");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }

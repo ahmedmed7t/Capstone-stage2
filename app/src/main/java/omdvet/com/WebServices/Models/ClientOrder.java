@@ -32,6 +32,9 @@ public class ClientOrder{
 	@SerializedName("emp_id")
 	private int empId;
 
+	public ClientOrder() {
+	}
+
 	public void setDate(String date){
 		this.date = date;
 	}

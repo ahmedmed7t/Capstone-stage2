@@ -10,6 +10,9 @@ public class Product {
     @SerializedName("id")
     private int id;
 
+    public Product() {
+    }
+
     public Product(int quantity, int id) {
         this.quantity = quantity;
         this.id = id;

@@ -25,6 +25,12 @@
          app:showAsAction="never"
          />
     <item
+        android:id="@+id/myOrders"
+        android:title="@string/My_Orders"
+        app:showAsAction="never"
+        />
+
+    <item
         android:id="@+id/logOut"
         android:title="@string/logout"
         app:showAsAction="never"

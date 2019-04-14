@@ -57,6 +57,17 @@ public class Mony{
 		return clientId;
 	}
 
+	public Mony() {
+	}
+
+	public Mony(Double cost, Double monyAgel, int id, String isPay, String clientId) {
+		this.cost = cost;
+		this.monyAgel = monyAgel;
+		this.id = id;
+		this.isPay = isPay;
+		this.clientId = clientId;
+	}
+
 	@Override
  	public String toString(){
 		return 

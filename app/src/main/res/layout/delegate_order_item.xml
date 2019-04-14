@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/delegate_order_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_Order_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_name"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/delegate_order_date"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/delegate_order_customer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_name"
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delegate_order_date"
+        app:layout_constraintStart_toEndOf="@id/txt_Order_name"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_Order_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_address"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/delegate_order_customer_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/delegate_order_customer_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_address"
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_Order_address"
+        app:layout_constraintStart_toEndOf="@id/txt_Order_address"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_Order_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_phone"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/delegate_order_customer_address"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/delegate_order_customer_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_phone"
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_Order_phone"
+        app:layout_constraintStart_toEndOf="@id/txt_Order_phone"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_Order_cost_before"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price_before_discount"
+        android:textSize="17sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delegate_order_customer_phone"
+         />
+
+    <TextView
+        android:id="@+id/delegate_order_cost_before"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price_before_discount"
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_Order_cost_before"
+        app:layout_constraintStart_toEndOf="@id/txt_Order_cost_before"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_Order_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/final_cost"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/delegate_order_cost_before"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/delegate_order_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/final_cost"
+        android:textSize="17sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_Order_cost"
+        app:layout_constraintStart_toEndOf="@id/txt_Order_cost"
+        android:layout_marginStart="15dp"/>
+
+
+    <View
+        android:id="@+id/delegate_view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/delegate_order_cost" />
+</android.support.constraint.ConstraintLayout>

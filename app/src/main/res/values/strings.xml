@@ -74,6 +74,6 @@
     <string name="delegates">Delegates</string>
     <string name="add_product">Add product</string>
     <string name="Outstanding_Orders">Outstanding Orders</string>
-
+    <string name="My_Orders">My Orders</string>
 
 </resources>

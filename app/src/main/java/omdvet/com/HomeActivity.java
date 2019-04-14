@@ -5,6 +5,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,9 +22,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 import java.util.ArrayList;
 
 import omdvet.com.WebServices.Models.Emp;
+import omdvet.com.WebServices.Models.Mony;
 import omdvet.com.WebServices.Requests.EmpRequest;
 import omdvet.com.WebServices.Requests.getProductsRequest;
 import omdvet.com.WebServices.Responses.EmpResponse;
@@ -40,6 +50,10 @@ public class HomeActivity extends AppCompatActivity {
     private ArrayList productIdList;
     ProgressBar progressBar ;
 
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private ChildEventListener childEventListener;
+
     RecyclerView recyclerView;
     static RecyclerView.Adapter adapter;
     @Override
@@ -48,6 +62,53 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         progressBar = findViewById(R.id.progress_home);
         progressBar.setVisibility(View.VISIBLE);
+
+//        firebaseDatabase = FirebaseDatabase.getInstance();
+//        databaseReference = firebaseDatabase.getReference().child("Message");
+//
+//        databaseReference.child("first").setValue("ahmed");
+//        databaseReference.child("second").setValue("medhat");
+//
+//        databaseReference = firebaseDatabase.getReference().child("Message");
+//
+//        databaseReference.child("first").setValue("ahmed");
+//        databaseReference.child("second").setValue("medhat");
+//        databaseReference.child("first").setValue("mohamed");
+//        Mony mony2 = new Mony(5.5,6.2,2,"aaa","ddd");
+//        Mony mony = new Mony(5.5,6.2,1,"aaa","ddd");
+//
+//        databaseReference = firebaseDatabase.getReference().child("Me");
+//        databaseReference.child("first").setValue(mony2);
+//        databaseReference.child("second").setValue(mony);
+//
+//        final ArrayList<Mony> arrayList = new ArrayList<>();
+
+//        childEventListener = new ChildEventListener() {
+//
+//            @Override
+//            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+//                Mony m = dataSnapshot.getValue(Mony.class);
+//                arrayList.add(m);
+//                String ss = "";
+//            }
+//            @Override
+//            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+//            }
+//            @Override
+//            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+//            }
+//            @Override
+//            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//            }
+//
+//        };
+//
+//        Query query = databaseReference.orderByChild("id").equalTo(1);
+//
+//        query.addChildEventListener(childEventListener);
         init();
         getData();
     }
@@ -97,10 +158,6 @@ public class HomeActivity extends AppCompatActivity {
                             @Override
                             public void onTouchEvent(RecyclerView rv, MotionEvent e) {
 
-//                    int position = rv.getChildAdapterPosition(child);
-//                    View child = rv.getChildAt(position);
-
-
                             }
 
                             @Override
@@ -121,10 +178,12 @@ public class HomeActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         MenuInflater inflater = getMenuInflater();
         SharedPreferences prefs = getSharedPreferences(
                 "USER", Context.MODE_PRIVATE);
         String s = prefs.getString("IS_ADMIN","");
+
         if(s.equals("1"))
             inflater.inflate(R.menu.admin_menu, menu);
         else if(s.equals("0"))
@@ -167,6 +226,12 @@ public class HomeActivity extends AppCompatActivity {
                 Intent i4 = new Intent(HomeActivity.this,getOrdersActivity.class);
                 i4.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i4);
+                finish();
+                break;
+            case R.id.myOrders:
+                Intent i5 = new Intent(HomeActivity.this,DelegateOrdersActivity.class);
+                i5.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i5);
                 finish();
                 break;
             default:

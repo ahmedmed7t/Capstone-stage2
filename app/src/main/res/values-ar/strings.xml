@@ -76,5 +76,7 @@
     <string name="delegates">المندوبين</string>
     <string name="add_product">أضافة منتج</string>
     <string name="Outstanding_Orders">الطلبات المستحقة</string>
+    <string name="My_Orders">فواتيرى السابقة</string>
+
 
 </resources>
