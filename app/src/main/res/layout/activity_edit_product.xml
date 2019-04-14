@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProductActivity"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="@string/product_name"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/productImg"
+        app:layout_constraintStart_toStartOf="@+id/productImg"
+        app:layout_constraintTop_toBottomOf="@+id/productImg" />
+
+    <TextView
+        android:id="@+id/productQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="@string/quantity"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/productPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="@string/price"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toTopOf="@+id/editText2" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/productImg"
+        android:layout_width="170dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/ic_photo_camera"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/productName"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/productName"
+        app:layout_constraintTop_toBottomOf="@+id/productName" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+</android.support.constraint.ConstraintLayout>

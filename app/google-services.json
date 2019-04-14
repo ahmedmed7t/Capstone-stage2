@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "248644340172",
+    "firebase_url": "https://capstone-stage2-36216.firebaseio.com",
+    "project_id": "capstone-stage2-36216",
+    "storage_bucket": "capstone-stage2-36216.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248644340172:android:6bfb6c34afcc0a8c",
+        "android_client_info": {
+          "package_name": "omdvet.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248644340172-bhqqljo43o5d15n42591tno38mru1hmj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "omdvet.com",
+            "certificate_hash": "9e1a1f02e2cbe025e885ea9927b08da840e320b7"
+          }
+        },
+        {
+          "client_id": "248644340172-8hnpbe6id9slsugf32kkl6nhcsbdh1c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF1QqTSKUmzqYUGcpSGxJZmoV_eZBnnLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248644340172-8hnpbe6id9slsugf32kkl6nhcsbdh1c4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eee">
+
+    <TextView
+        android:id="@+id/productNameSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="@string/product_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:background="#eee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/productQntSale"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginRight="28dp"
+        android:background="@drawable/curve_corner"
+        android:ems="10"
+        android:textAlignment="center"
+        android:fontFamily="@font/cairo_semibold"
+        android:inputType="number"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/productNameSale"
+        app:layout_constraintEnd_toStartOf="@+id/productNameSale"
+        app:layout_constraintTop_toTopOf="@+id/productNameSale"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productNameSale" />
+
+</android.support.constraint.ConstraintLayout>

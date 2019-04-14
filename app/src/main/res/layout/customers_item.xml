@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/curve_corner2"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="@string/sale"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:elevation="@dimen/elevation"
+        android:drawableLeft="@drawable/ic_shopping_cart_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <Button
+        android:id="@+id/bankUp"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="12dp"
+        android:background="@drawable/curve_corner2"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="@string/collect"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:drawableLeft="@drawable/ic_coins"
+        android:elevation="@dimen/elevation"
+        app:layout_constraintEnd_toEndOf="@+id/order"
+        app:layout_constraintStart_toStartOf="@+id/order"
+        app:layout_constraintTop_toBottomOf="@+id/order" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_name"
+        android:fontFamily="@font/cairo_semibold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/customerName"/>
+
+    <TextView
+        android:id="@+id/customerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:gravity="center"
+        android:text="@string/customer_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/txt_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_name" />
+
+
+    <TextView
+        android:id="@+id/txt_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_phone"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="@id/txt_name"
+        app:layout_constraintStart_toStartOf="@id/txt_name"
+        app:layout_constraintTop_toBottomOf="@id/customerName"/>
+
+    <TextView
+        android:id="@+id/customerPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:gravity="center"
+        android:text="@string/customer_phone"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/customerName"
+        app:layout_constraintStart_toStartOf="@+id/customerName"
+        app:layout_constraintTop_toBottomOf="@+id/txt_mobile" />
+
+    <TextView
+        android:id="@+id/txt_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_address"
+        android:fontFamily="@font/cairo_semibold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/txt_name"
+        app:layout_constraintStart_toStartOf="@id/txt_name"
+        app:layout_constraintTop_toBottomOf="@id/customerPhone"/>
+
+    <TextView
+        android:id="@+id/customerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:gravity="center"
+        android:text="@string/customer_address"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/customerPhone"
+        app:layout_constraintStart_toStartOf="@+id/customerPhone"
+        app:layout_constraintTop_toBottomOf="@+id/txt_address"
+        app:layout_constraintBottom_toTopOf="@id/view2"/>
+
+    <Button
+        android:id="@+id/report"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/curve_corner2"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="@string/report"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:elevation="@dimen/elevation"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/ic_folder"
+        app:layout_constraintEnd_toEndOf="@+id/bankUp"
+        app:layout_constraintStart_toStartOf="@+id/bankUp"
+        app:layout_constraintTop_toBottomOf="@+id/bankUp"
+        />
+
+    <Button
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:id="@+id/recipet"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/report"
+        app:layout_constraintStart_toStartOf="@+id/report"
+        app:layout_constraintTop_toBottomOf="@+id/report"
+        android:background="@drawable/curve_corner2"
+        android:text="@string/billes"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/ic_bill"
+        android:elevation="@dimen/elevation"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:fontFamily="@font/cairo_semibold"
+        />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintTop_toBottomOf="@id/recipet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

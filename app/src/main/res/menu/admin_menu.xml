@@ -1,0 +1,33 @@
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/customers"
+        android:title="@string/customers"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/delegates"
+        android:title="@string/delegates"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/addProduct"
+        android:title="@string/add_product"
+        app:showAsAction="never"
+        />
+     <item
+         android:id="@+id/orders"
+         android:title="@string/Outstanding_Orders"
+         app:showAsAction="never"
+         />
+    <item
+        android:id="@+id/logOut"
+        android:title="@string/logout"
+        app:showAsAction="never"
+        />
+
+</menu>

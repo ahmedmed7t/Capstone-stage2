@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderDetailsActivity">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent">
+
+    <TextView
+        android:id="@+id/txt_deatils_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/customer_name"
+        android:textSize="20sp"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="13dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/txt_name_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/txt_deatils_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_phone"
+        android:layout_marginStart="6dp"
+        android:textSize="20sp"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="13dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/txt_phone_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:id="@+id/txt_deatils_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:layout_marginStart="6dp"
+        android:textSize="20sp"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="13dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/txt_date_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/products"
+        android:textSize="25sp"
+        android:layout_marginStart="6dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="13dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/details_item_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="#eee"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_date_value"
+        app:layout_constraintBottom_toTopOf="@id/txt_details_cost">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp">
+
+
+
+    <TextView
+        android:id="@+id/txt_details_cost"
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:layout_height="wrap_content"
+        android:text="@string/price_before_discount"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="end"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        />
+
+        <TextView
+            android:id="@+id/txt_value_cost"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAlignment="center"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp">
+
+
+
+        <TextView
+            android:id="@+id/txt_details_final_cost"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:text="@string/final_cost"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_gravity="end"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
+            />
+        <TextView
+            android:id="@+id/txt_value_final_cost"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAlignment="center"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_order_details"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="#00000000"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.399" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

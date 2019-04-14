@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CustomersActivity">
+
+   <EditText
+       android:id="@+id/search_customer"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:layout_marginEnd="15dp"
+       android:layout_marginStart="15dp"
+       android:layout_marginTop="10dp"
+       android:hint="@string/search"
+       android:padding="10dp"
+       android:textColor="@android:color/black"
+       android:drawableEnd="@drawable/ic_search"
+       android:background="@drawable/curve_corner"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/customerRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/addCustomer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_customer" />
+
+    <ProgressBar
+        android:id="@+id/progress_customer"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:visibility="invisible"
+        android:background="#00000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/addCustomer"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="10dp"
+        android:background="@drawable/curve_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/add_user" />
+
+</android.support.constraint.ConstraintLayout>
