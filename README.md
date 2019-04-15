@@ -14,7 +14,9 @@ there are two users for this app
 Important Note
 ===========
 ```
-in section of outStanding orders there are many orders
+i used AsynTask in getOrdersActivity
+
+in section of orders there are many orders
 but it does not work because of loss some products 
 
 please test last orders 
