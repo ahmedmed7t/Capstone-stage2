@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'debug.keystore'
             keyPassword 'android'
-            storeFile file('C:/Users/CrazyNet/.android/debug.keystore')
+            storeFile file('debug.keystore')
             storePassword 'android'
         }
     }
@@ -16,6 +16,7 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -45,6 +46,11 @@ dependencies {
 
     // firebase
     implementation 'com.google.firebase:firebase-database:16.1.0'
+
+    // ads
+    implementation 'com.google.android.gms:play-services-ads:17.2.0'
+
+    compile 'com.android.support:multidex:1.0.1'
 
     // Retrofit & OkHttp
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'

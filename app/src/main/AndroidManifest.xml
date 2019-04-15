@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo1"
@@ -14,6 +17,11 @@
         android:roundIcon="@drawable/logo1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8606368708228706~7837891872"/>
+
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +53,8 @@
         </receiver>
 
         <activity android:name=".DelegateOrdersActivity"></activity>
+
+
     </application>
 
 </manifest>

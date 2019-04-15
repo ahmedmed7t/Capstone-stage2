@@ -77,6 +77,9 @@
     <string name="add_product">أضافة منتج</string>
     <string name="Outstanding_Orders">الطلبات المستحقة</string>
     <string name="My_Orders">فواتيرى السابقة</string>
-
+    <string name="logo">الغلاف</string>
+    <string name="photo">صورة</string>
+    <string name="line">خط</string>
+    <string name="ad_id">ca-app-pub-8606368708228706/6906161578</string>
 
 </resources>

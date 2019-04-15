@@ -16,4 +16,7 @@ public class getProductsResponse {
         this.status = status;
     }
 
+    public ArrayList<Orders> getOrders() {
+        return orders;
+    }
 }

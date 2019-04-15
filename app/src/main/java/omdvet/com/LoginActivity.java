@@ -3,6 +3,8 @@ package omdvet.com;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.QuickContactBadge;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import omdvet.com.WebServices.Requests.LoginRequest;
 import omdvet.com.WebServices.Responses.LoginResponse;
@@ -27,6 +33,20 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.MyTheme);
         setContentView(R.layout.activity_login);
+
+        MultiDex.install(this);
+
+        MobileAds.initialize(this,"ca-app-pub-8606368708228706~7837891872");
+
+
+        AdView mAdView = (AdView) findViewById(R.id.adViewLogin);
+        // Create an ad request. Check logcat output for the hashed device ID to
+        // get test ads on a physical device. e.g.
+        // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        mAdView.loadAd(adRequest);
 
 
 
@@ -83,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     @Override
@@ -91,4 +112,6 @@ public class LoginActivity extends AppCompatActivity {
         finishAffinity();
         System.exit(0);
     }
+
+
 }

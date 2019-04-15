@@ -48,6 +48,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
+        android:contentDescription="@string/line"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

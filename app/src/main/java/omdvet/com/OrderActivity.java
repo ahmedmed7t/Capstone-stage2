@@ -194,8 +194,6 @@ public class OrderActivity extends AppCompatActivity {
 
                 }
 
-                getData();
-
                 firebaseDatabase = FirebaseDatabase.getInstance();
                 databaseReference = firebaseDatabase.getReference().child("Orders");
 
@@ -345,56 +343,4 @@ public class OrderActivity extends AppCompatActivity {
 
     }
 
-    public void  getData(){
-
-        RetrofitWebService.getService().EMP_CALL(new EmpRequest()).enqueue(new Callback<EmpResponse>() {
-            @Override
-            public void onResponse(Call<EmpResponse> call, Response<EmpResponse> response) {
-                ArrayList<Emp> arrayList = response.body().emps;
-                String mText = getResources().getString(R.string.delegate_name)+"\n";
-                String text1 = getResources().getString(R.string.n_customers)+"\n";
-                for(int i = 0 ; i < arrayList.size() ; i++){
-                    mText +=  arrayList.get(i).getName()+"\n";
-                    text1 +=  arrayList.get(i).getClients()+"\n";
-
-                }
-
-                addToWidget(mText,text1);
-            }
-
-            @Override
-            public void onFailure(Call<EmpResponse> call, Throwable t) {
-
-            }
-        });
-
-    }
-
-    public void addToWidget(String text,String text1 ){
-
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
-        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, NewAppWidget.class));
-        NewAppWidget.update_widget(this,appWidgetManager,appWidgetIds,text,text1);
-
-    }
-
-
-    public void showDialog(){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(getApplicationContext());
-        builder1.setMessage("Order added to your billes");
-        builder1.setCancelable(true);
-
-        builder1.setPositiveButton(
-                "OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-
-
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
-    }
 }

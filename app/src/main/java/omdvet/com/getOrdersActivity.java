@@ -3,6 +3,7 @@ package omdvet.com;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -55,26 +56,8 @@ public class getOrdersActivity extends AppCompatActivity {
 
     public void init(){
 
-        RetrofitWebService.getService().GetAllBilles().enqueue(new Callback<GetAllBillesResponse>() {
-            @Override
-            public void onResponse(Call<GetAllBillesResponse> call, Response<GetAllBillesResponse> response) {
+        new AsyncCaller().execute("http://iomd.info/public/api/billes");
 
-                if(response.body().getStatus() == 200) {
-                    progressBar.setVisibility(View.INVISIBLE);
-                    GetAllBillesResponse mRespose = response.body();
-
-                    getOrdersAdapter adapter = new getOrdersAdapter(
-                            getOrdersActivity.this,
-                            mRespose.getAllBilles());
-                    recyclerView.setAdapter(adapter);
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<GetAllBillesResponse> call, Throwable t) {
-            }
-        });
     }
 
     public void initClient(int id){
@@ -114,5 +97,28 @@ public class getOrdersActivity extends AppCompatActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
         finish();
+    }
+
+
+    private class AsyncCaller extends AsyncTask<String, Void, ArrayList<AllBilles>>
+    {
+
+        @Override
+        protected ArrayList<AllBilles> doInBackground(String... strings) {
+
+            ArrayList<AllBilles> billes  = BakesUtiles.fetchdata(strings[0]);
+            return billes;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<AllBilles> allBilles) {
+            super.onPostExecute(allBilles);
+            progressBar.setVisibility(View.INVISIBLE);
+
+            getOrdersAdapter adapter = new getOrdersAdapter(
+                    getOrdersActivity.this,
+                    allBilles);
+            recyclerView.setAdapter(adapter);
+        }
     }
 }

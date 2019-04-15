@@ -75,5 +75,10 @@
     <string name="add_product">Add product</string>
     <string name="Outstanding_Orders">Outstanding Orders</string>
     <string name="My_Orders">My Orders</string>
+    <string name="logo">logo</string>
+    <string name="photo">photo</string>
+    <string name="line">Line</string>
+    <string name="ad_id">ca-app-pub-8606368708228706/6906161578</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
 </resources>
