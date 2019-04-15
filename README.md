@@ -19,3 +19,8 @@ but it does not work because of loss some products
 
 please test last orders 
 ```
+
+Key Store Information
+==================
+
+<img src="https://user-images.githubusercontent.com/37122820/56137093-5ce7bb80-5f94-11e9-800a-05e0486ddd91.PNG"  width="400" height="300" hspace="20">
